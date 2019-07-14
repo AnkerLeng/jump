@@ -4,8 +4,8 @@
 import './libs/weapp-adapter.js'
 import * as THREE from './libs/three.js'
 
-var width = 400
-var height = 400
+var width = 375
+var height = 667
 
 var renderer = new THREE.WebGLRenderer({
   canvas: canvas
@@ -14,8 +14,8 @@ var scene = new THREE.Scene()
 var camera = new THREE.OrthographicCamera(-width / 2, width / 2,
 height / 2, -height / 2, -1000, 1000)
 
-renderer.setClearColor(new THREE.Color(0x000000, 1.0))
-renderer.setSize(400, 400)
+renderer.setClearColor(new THREE.Color(0x000000))
+renderer.setSize(375, 667)
 
 var triangleShape = new THREE.Shape()
 triangleShape.moveTo(0, 100)
@@ -51,7 +51,7 @@ var animate = function () {
 
 var render = function () {
   animate()
-  mesh.rotation.set(0, 0, currentAngle)
+  mesh.rotation.set(0, currentAngle, 0)
   renderer.render(scene, camera)
   requestAnimationFrame(render)
 }
