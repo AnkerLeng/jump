@@ -3,7 +3,7 @@
  */
 import * as THREE from '../libs/three.js'
 window.THREE = THREE
-import game from '../game/game.js'
+import game from './game/game.js'
 
 class Main {
     constructor() {
